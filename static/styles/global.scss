@@ -1,0 +1,14 @@
+@use 'base/reset';
+@use 'base/typography';
+@use 'base/colours';
+@use 'base/effects';
+@use 'base/animations';
+
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;700&family=Kumbh+Sans:wght@600;700;800&display=swap');
+::selection {
+	background-color: var(--colour-primary-500);
+	color: var(--colour-white);
+}
+:focus-visible {
+	outline-color: var(--colour-primary-500);
+}
