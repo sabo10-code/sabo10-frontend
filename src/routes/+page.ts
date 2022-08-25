@@ -1,8 +1,6 @@
 import client from '../sanityClient';
 
 export async function load({ url: { pathname }}) {
-	console.log(pathname)
-
 	const props = await client.fetch(`*[
 		_type == "page"
 	][0]{

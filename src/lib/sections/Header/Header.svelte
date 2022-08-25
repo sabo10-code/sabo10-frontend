@@ -3,24 +3,15 @@
 	import Logo from '$lib/components/Logo.svelte';
 	import NavMenu from './NavMenu.svelte';
 	import Section from '$lib/components/Section.svelte';
+	import Row from '$lib/components/Row.svelte';
 	export let headerProps;
 </script>
 
 <Section tag="header" borderBottom sticky>
 	<Container>
-		<div>
+		<Row>
 			<Logo />
 			<NavMenu navMenuProps={headerProps}/>
-		</div>
+		</Row>
 	</Container>
 </Section>
-
-<style>
-	div {
-		display: flex;
-		width: 100%;
-		height: 100%;
-		align-items: center;
-		justify-content: space-between;
-	}
-</style>
