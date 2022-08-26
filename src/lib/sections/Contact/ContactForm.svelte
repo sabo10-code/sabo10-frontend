@@ -8,7 +8,7 @@
 	const { label, icon } = button;
 </script>
 
-<Form name="contact" column marginTop="2.5rem">
+<Form name="Contact" column marginTop="2.5rem">
 	<FormInput required type="text" label="Name" id="contactName" />
 	<FormInput required type="email" label="Email" id="contactEmail" />
 	<FormInput type="text" label="Website" id="contactWebsite" />
