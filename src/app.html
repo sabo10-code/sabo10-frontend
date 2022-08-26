@@ -12,5 +12,18 @@
 	</head>
 	<body>
 		<div>%sveltekit.body%</div>
+
+		<!-- Static Contact Form for Netlify Detection -->
+		<form name="contact" netlify netlify-honeypot="bot-field" hidden>
+			<input type="text" name="Name" />
+			<input type="email" name="Email" />
+			<input type="text" name="Website" />
+			<textarea name="Message"></textarea>
+		</form>
+
+		<!-- Static Newsletter Form for Netlify Detection -->
+		<form name="newsletter" netlify netlify-honeypot="bot-field" hidden>
+			<input type="email" name="Email" />
+		</form>
 	</body>
 </html>

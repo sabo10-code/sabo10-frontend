@@ -1,4 +1,6 @@
 <script lang="ts">
+	import FormHoneyPot from './FormHoneyPot.svelte';
+
 	export let column = false;
 	export let halfWidth = false;
 	export let marginTop = '';
@@ -13,6 +15,8 @@
 	class:halfWidth
 	style="--margin-top: {marginTop}"
 >
+	<FormHoneyPot />
+	<input type="hidden" name="form-name" value={name} />
 	<slot />
 </form>
 

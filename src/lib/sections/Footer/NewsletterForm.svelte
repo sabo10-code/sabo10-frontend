@@ -4,10 +4,10 @@
 	import Button from '$lib/components/Button.svelte';
 	import Icon from '$lib/components/Icon.svelte';
 	export let newsletterFormProps;
-	const { inputLabel: label, buttonLabel, icon } = newsletterFormProps;
+	const {  buttonLabel, icon } = newsletterFormProps;
 </script>
 
 <Form name="newsletter" halfWidth>
-	<FormInput required type="email" {label} id="newsletterEmail" attachedButton />
+	<FormInput required type="email" label="Email" id="newsletterEmail" attachedButton />
 	<Button type="submit" attachedInput>{buttonLabel}<Icon {icon} /></Button>
 </Form>
