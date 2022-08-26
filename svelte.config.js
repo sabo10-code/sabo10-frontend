@@ -14,6 +14,7 @@ const config = {
 			enabled: true,
 			onError: "continue",
 			entries: ['*'],
+			default: true,
 		},
 	}
 };
