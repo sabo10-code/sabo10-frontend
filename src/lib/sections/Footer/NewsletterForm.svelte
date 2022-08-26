@@ -7,7 +7,7 @@
 	const {  buttonLabel, icon } = newsletterFormProps;
 </script>
 
-<Form name="Newsletter" halfWidth>
+<Form name="newsletter" halfWidth>
 	<FormInput required type="email" label="Email" id="newsletterEmail" attachedButton />
 	<Button type="submit" attachedInput>{buttonLabel}<Icon {icon} /></Button>
 </Form>
