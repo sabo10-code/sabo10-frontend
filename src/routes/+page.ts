@@ -1,4 +1,5 @@
 import client from '../sanityClient';
+export const prerender = true;
 
 export async function load({ url: { pathname }}) {
 	const props = await client.fetch(`*[
