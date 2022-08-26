@@ -14,6 +14,7 @@
 	class:halfWidth
 	style="--margin-top: {marginTop}"
 >
+<input type="hidden" name="form-name" value={name} />
 	<FormHoneyPot />
 	<slot />
 </form>
