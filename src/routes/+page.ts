@@ -1,6 +1,6 @@
 import client from '../sanityClient';
 
-export async function load({ url: { pathname }}) {
+export async function load({ url: { pathname } }) {
 	const props = await client.fetch(`*[
 		_type == "page"
 	][0]{
@@ -8,7 +8,7 @@ export async function load({ url: { pathname }}) {
 		body,
 		button->{label,icon,href}
 	}`);
-	
+
 	const heroProps = await client.fetch(`*[
 		_type == "hero"
 	][0]{

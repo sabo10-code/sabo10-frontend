@@ -12,10 +12,10 @@ const config = {
 		prerender: {
 			crawl: true,
 			enabled: true,
-			onError: "continue",
+			onError: 'continue',
 			entries: ['*'],
-			default: true,
-		},
+			default: true
+		}
 	}
 };
 

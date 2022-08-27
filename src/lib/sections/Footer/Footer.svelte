@@ -15,7 +15,7 @@
 			<Logo />
 			<SocialMediaList {socialMediaListProps} />
 		</div>
-		<Newsletter {newsletterProps}/>
+		<Newsletter {newsletterProps} />
 		<span><Icon icon="cactus" width="200px" /></span>
 	</Container>
 </Section>

@@ -2,7 +2,7 @@
 	import { cookieConsentStatus, cookieConsentBannerViewed } from '$lib/stores/cookieConsent';
 	import { slide } from 'svelte/transition';
 	import { onDestroy } from 'svelte';
-import Spacer from './components/Spacer.svelte';
+	import Spacer from './components/Spacer.svelte';
 
 	function handleCookiesButtonClick(value: boolean) {
 		$cookieConsentStatus = value;
@@ -21,15 +21,17 @@ import Spacer from './components/Spacer.svelte';
 
 {#if !$cookieConsentBannerViewed}
 	<div out:slide class:hidden>
-        <p>This site uses cookies. For details please see our <a href="/cookie-policy">cookie policy</a>.</p>
-        <Spacer block="1rem 0">
-            <span>
-                <button class="accept" on:click={() => handleCookiesButtonClick(true)}>Accept</button>
-                <button class="reject" on:click={() => handleCookiesButtonClick(false)}>Reject</button
-                    >
-                </span>
-            </Spacer>
-            <button class="close" on:click={() => handleCookiesButtonClick(false)} aria-label="Close" />
+		<p>
+			This site uses cookies. For details please see our <a href="/privacy-policy">privacy policy</a
+			>.
+		</p>
+		<Spacer block="1rem 0">
+			<span>
+				<button class="accept" on:click={() => handleCookiesButtonClick(true)}>Accept</button>
+				<button class="reject" on:click={() => handleCookiesButtonClick(false)}>Reject</button>
+			</span>
+		</Spacer>
+		<button class="close" on:click={() => handleCookiesButtonClick(true)} aria-label="Close" />
 	</div>
 {/if}
 
@@ -44,29 +46,29 @@ import Spacer from './components/Spacer.svelte';
 		padding: 1rem 1.5rem;
 		font-family: var(--font-family-body);
 	}
-    .hidden {
+	.hidden {
 		transform: translateY(100%);
 	}
-    a {
-        color: var(--colour-primary-500);
-        text-decoration: none;
-    }
+	a {
+		color: var(--colour-primary-500);
+		text-decoration: none;
+	}
 
 	button {
 		border: none;
 		cursor: pointer;
 	}
-    span {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 1rem;
-    }
+	span {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 1rem;
+	}
 	span button {
 		border-radius: 0.25rem;
 		padding: 0.25rem 0.5rem;
-        color: var(--colour-white);
-        font-family: var(--font-family-heading);
-        font-weight: var(--font-weight-bold);
+		color: var(--colour-white);
+		font-family: var(--font-family-heading);
+		font-weight: var(--font-weight-bold);
 	}
 	.accept {
 		background-color: var(--colour-primary-500);
@@ -75,13 +77,11 @@ import Spacer from './components/Spacer.svelte';
 		background-color: var(--colour-neutral-500);
 	}
 
-
-
 	.close {
 		width: 0px;
 		height: 0px;
-        background-color: transparent;
-        position: absolute;
+		background-color: transparent;
+		position: absolute;
 		right: 0.25rem;
 		top: 0.25rem;
 	}
@@ -92,10 +92,10 @@ import Spacer from './components/Spacer.svelte';
 	.close::before,
 	.close::after {
 		content: '';
-        display: block;
-        position: relative;
-        right: 0.25rem;
-        top: 0.25rem;
+		display: block;
+		position: relative;
+		right: 0.25rem;
+		top: 0.25rem;
 		width: 1rem;
 		height: 1rem;
 		background: repeating-linear-gradient(
@@ -107,12 +107,10 @@ import Spacer from './components/Spacer.svelte';
 		);
 		border-radius: 50%;
 		transform: translate(-50%, -50%) rotate(-45deg);
-        transform-origin: right bottom;
-
+		transform-origin: right bottom;
 	}
 	.close::after {
-		transform:translate(-50%, -50%) rotate(45deg);
-        transform-origin: right top;
+		transform: translate(-50%, -50%) rotate(45deg);
+		transform-origin: right top;
 	}
-
 </style>

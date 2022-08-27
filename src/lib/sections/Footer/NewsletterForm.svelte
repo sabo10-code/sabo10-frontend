@@ -4,7 +4,7 @@
 	import Button from '$lib/components/Button.svelte';
 	import Icon from '$lib/components/Icon.svelte';
 	export let newsletterFormProps;
-	const {  buttonLabel, icon } = newsletterFormProps;
+	const { buttonLabel, icon } = newsletterFormProps;
 </script>
 
 <Form name="newsletter" halfWidth>

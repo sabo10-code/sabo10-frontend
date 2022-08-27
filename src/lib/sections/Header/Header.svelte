@@ -11,7 +11,7 @@
 	<Container>
 		<Row>
 			<Logo />
-			<NavMenu navMenuProps={headerProps}/>
+			<NavMenu navMenuProps={headerProps} />
 		</Row>
 	</Container>
 </Section>

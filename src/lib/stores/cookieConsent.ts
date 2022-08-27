@@ -1,7 +1,7 @@
 import { writable } from 'svelte/store';
 import { browser } from '$app/env';
 
-const existingCookieConsentStatus = browser && localStorage.getItem('sabo10_consent') == "true";
+const existingCookieConsentStatus = browser && localStorage.getItem('sabo10_consent') == 'true';
 
 export const cookieConsentStatus = writable(existingCookieConsentStatus);
 export const cookieConsentBannerViewed = writable(existingCookieConsentStatus);

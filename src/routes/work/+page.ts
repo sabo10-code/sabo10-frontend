@@ -1,3 +1,3 @@
-export async function load({ url: { pathname }}) {
-	console.log(pathname)
+export async function load({ url: { pathname } }) {
+	console.log(pathname);
 }
