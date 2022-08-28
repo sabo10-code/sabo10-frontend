@@ -3,8 +3,8 @@
 	import Icon from '$lib/components/Icon.svelte';
 	import Paragraph from '$lib/components/Paragraph.svelte';
 	import Row from '$lib/components/Row.svelte';
-	export let offering;
-	const { heading, icon, body } = offering;
+	export let serviceItemProps;
+	const { heading, icon, text } = serviceItemProps;
 </script>
 
 <li>
@@ -12,5 +12,5 @@
 		<Heading tag="h3">{heading}</Heading>
 		<Icon {icon} width="2.5rem" />
 	</Row>
-	<Paragraph>{body}</Paragraph>
+	<Paragraph>{text}</Paragraph>
 </li>

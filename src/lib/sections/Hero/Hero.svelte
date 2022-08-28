@@ -7,18 +7,17 @@
 
 	export let heroProps: {
 		heading: string;
-		body: string;
+		text: string;
 		button: { href: string; label: string; icon: string };
 	};
-	const { heading, body, button } = heroProps;
-	const { href, label, icon } = button;
+	const { heading, text, button: { href, label, icon} } = heroProps;
 </script>
 
 <Section backgroundColour="var(--colour-primary-100)">
 	<Container>
 		<div>
 			<h2>{@html heading}</h2>
-			<Paragraph halfWidth>{body}</Paragraph>
+			<Paragraph halfWidth>{text}</Paragraph>
 			<Button {href} pill shrink let:hovering
 				>{label}<Icon {icon} {hovering} animation="pointing" /></Button
 			>

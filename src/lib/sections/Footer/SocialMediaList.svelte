@@ -1,12 +1,6 @@
-<script lang="ts">
-	import SocialMediaIcon from './SocialMediaIcon.svelte';
-	export let socialMediaListProps;
-</script>
 
 <ul>
-	{#each socialMediaListProps as socialMediaIconProps}
-		<SocialMediaIcon {socialMediaIconProps} />
-	{/each}
+	<slot/>
 </ul>
 
 <style>

@@ -1,8 +1,8 @@
 <script lang="ts">
 	import Icon from '$lib/components/Icon.svelte';
 
-	export let socialMediaIconProps;
-	const { label, href, icon } = socialMediaIconProps;
+	export let socialMediaItemProps;
+	const { href, label, icon } = socialMediaItemProps;
 </script>
 
 <li><a {href}><Icon {icon} /><span>{label}</span></a></li>

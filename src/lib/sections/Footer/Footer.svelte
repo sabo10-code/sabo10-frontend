@@ -5,15 +5,21 @@
 	import Newsletter from './Newsletter.svelte';
 	import Section from '$lib/components/Section.svelte';
 	import SocialMediaList from './SocialMediaList.svelte';
+	import SocialMediaItem from './SocialMediaItem.svelte';
+
 	export let footerProps;
-	const { socialMediaLinks: socialMediaListProps, newsletter: newsletterProps } = footerProps;
+	const { socialMediaList, newsletterProps } = footerProps;
 </script>
 
 <Section tag="footer" borderTop>
 	<Container>
 		<div>
 			<Logo />
-			<SocialMediaList {socialMediaListProps} />
+			<SocialMediaList>
+				{#each socialMediaList as socialMediaItemProps}
+					<SocialMediaItem {socialMediaItemProps} />
+				{/each}
+			</SocialMediaList>
 		</div>
 		<Newsletter {newsletterProps} />
 		<span><Icon icon="cactus" width="200px" /></span>

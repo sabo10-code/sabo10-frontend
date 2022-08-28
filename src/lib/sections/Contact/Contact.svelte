@@ -6,13 +6,13 @@
 	import Heading from '$lib/components/Heading.svelte';
 
 	export let contactProps;
-	const { heading, body, button } = contactProps;
+	const { heading, text, contactFormProps } = contactProps;
 </script>
 
 <Section>
 	<Container>
 		<Heading>{heading}</Heading>
-		<Paragraph>{@html body}</Paragraph>
-		<ContactForm {button} />
+		<Paragraph>{@html text}</Paragraph>
+		<ContactForm {contactFormProps} />
 	</Container>
 </Section>

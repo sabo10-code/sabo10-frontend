@@ -5,8 +5,21 @@
 	export let marginTop = '';
 	export let name: string;
 
-	function handleSuccess(data) {
-		console.table(data);
+	export let formSuccessHandler;
+
+	function handleResponse(response, formData) {
+		switch (response.status) {
+			case 200:
+				formSuccessHandler(formData);
+				break;
+			default:
+				handleFailure(response, formData);
+		}
+	}
+
+	function handleFailure(response, formData) {
+		const data = [...formData.entries()];
+		console.log('Request failed', { response }, { data });
 	}
 
 	function handleError(error) {
@@ -14,15 +27,13 @@
 	}
 
 	function handleSubmit() {
-		const form = document.querySelector(`form[name="${name}"]`);
-		let formData = new FormData(form);
-		fetch(`/forms/${name}`, {
+		let formData = new FormData(this);
+		fetch('/', {
 			method: 'POST',
 			headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
 			body: new URLSearchParams(formData).toString()
 		})
-			.then((response) => response.json())
-			.then((data) => handleSuccess(data))
+			.then((response) => handleResponse(response, formData))
 			.catch((error) => handleError(error));
 	}
 </script>

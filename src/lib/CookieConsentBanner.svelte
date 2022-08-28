@@ -3,7 +3,8 @@
 	import { slide } from 'svelte/transition';
 	import { onDestroy } from 'svelte';
 	import Spacer from './components/Spacer.svelte';
-
+	export let cookieConsentBannerProps;
+	const { delay, text, acceptLabel, rejectLabel } = cookieConsentBannerProps;
 	function handleCookiesButtonClick(value: boolean) {
 		$cookieConsentStatus = value;
 		$cookieConsentBannerViewed = true;
@@ -14,7 +15,7 @@
 		hidden = false;
 	}
 
-	const timeout = setTimeout(showCookieConsentBanner, 2000);
+	const timeout = setTimeout(showCookieConsentBanner, delay);
 
 	onDestroy(() => clearTimeout(timeout));
 </script>
@@ -22,13 +23,12 @@
 {#if !$cookieConsentBannerViewed}
 	<div out:slide class:hidden>
 		<p>
-			This site uses cookies. For details please see our <a href="/privacy-policy">privacy policy</a
-			>.
+			{text}
 		</p>
 		<Spacer block="1rem 0">
 			<span>
-				<button class="accept" on:click={() => handleCookiesButtonClick(true)}>Accept</button>
-				<button class="reject" on:click={() => handleCookiesButtonClick(false)}>Reject</button>
+				<button class="accept" on:click={() => handleCookiesButtonClick(true)}>{acceptLabel}</button>
+				<button class="reject" on:click={() => handleCookiesButtonClick(false)}>{rejectLabel}</button>
 			</span>
 		</Spacer>
 		<button class="close" on:click={() => handleCookiesButtonClick(true)} aria-label="Close" />

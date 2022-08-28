@@ -1,13 +1,84 @@
 import client from '../sanityClient';
 
-export async function load({ url: { pathname } }) {
-	const props = await client.fetch(`*[
-		_type == "page"
-	][0]{
-		heading,
-		body,
-		button->{label,icon,href}
-	}`);
+export async function load() {
+	const props = {
+		seoProps: {
+			title: '',
+			description: ''
+		},
+		heroProps: {
+			heading: '',
+			text: '',
+			button: {
+				href: '',
+				label: '',
+				icon: ''
+			}
+		},
+		workProps: {
+			heading: ''
+		},
+		servicesProps: {
+			heading: '',
+			serviceList: [
+				{
+					heading: '',
+					icon: '',
+					text: ''
+				}
+			],
+			button: {
+				href: '',
+				label: ''
+			}
+		},
+		blogProps: {
+			heading: "",
+			blogList: [{
+				title: '',
+				imageSrc: '',
+				text: "",
+				tagList: [{
+					colour: '',
+					label: ''
+				}],
+				button: {
+					href: '',
+					label: '',
+					icon: ''
+				}
+			}],
+			button: {
+				href: '',
+				label: '',
+				icon: ''
+			},
+			watermark: ''
+		},
+		contactProps: {
+			heading: '',
+			text: '',
+			contactFormProps: {
+				newsletterSignupLabel: 'Check the box to also join our monthly newsletter',
+				button: {
+					label: '',
+					icon: ''
+				},
+				successNotification: {
+					text: "success",
+					newsletterSignupText: "newslettr"
+				}
+			}
+		}
+	};
+	return props;
+	// const props = await client.fetch(`*[
+	// 	_type == "page"
+	// ][0]{
+	// 	heading,
+	// 	body,
+	// 	button->{label,icon,href}
+	// }`);
 
 	const heroProps = await client.fetch(`*[
 		_type == "hero"

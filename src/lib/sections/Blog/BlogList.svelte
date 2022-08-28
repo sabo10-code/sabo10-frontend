@@ -1,21 +1,5 @@
-<script lang="ts">
-	import BlogItem from './BlogItem.svelte';
-
-	export let blogs: [
-		{
-			title: string;
-			imageSrc: string;
-			body: string;
-			tags: [{ label: string; colour: string }];
-			button: { label: string; href: string; icon: string };
-		}
-	];
-</script>
-
 <div>
-	{#each blogs as blog, index}
-		<BlogItem {blog} {index} />
-	{/each}
+	<slot/>
 </div>
 
 <style>

@@ -1,6 +1,6 @@
 <script lang="ts">
 	export let navItemProps;
-	const { href, label } = navItemProps;
+	const { href, label, icon } = navItemProps;
 	import { page } from '$app/stores';
 	import Icon from '$lib/components/Icon.svelte';
 	import { navOpen } from '$lib/stores/navOpen';
@@ -16,7 +16,7 @@
 		tabindex={$navOpen ? 0 : -1}
 		on:click={handleClick}
 		aria-current={current ? 'page' : 'false'}
-		><span aria-hidden="true"><Icon icon="cactus" width="0.75rem" /></span>{label}</a
+		><span aria-hidden="true"><Icon {icon} width="0.75rem" /></span>{label}</a
 	>
 </li>
 

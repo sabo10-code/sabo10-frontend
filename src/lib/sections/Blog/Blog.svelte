@@ -8,10 +8,10 @@
 	import Heading from '$lib/components/Heading.svelte';
 	import Watermark from '$lib/components/Watermark.svelte';
 	import Spacer from '$lib/components/Spacer.svelte';
+	import BlogItem from './BlogItem.svelte';
 
 	export let blogProps;
-	const { heading, blogs, button, watermark } = blogProps;
-	const { label, href, icon } = button;
+	const { heading, blogList, button: {href, label, icon }, watermark } = blogProps;
 </script>
 
 <Section
@@ -20,7 +20,11 @@
 	<Container>
 		<Heading>{heading}</Heading>
 		<Spacer block="1.5rem">
-			<BlogList {blogs} />
+			<BlogList>
+				{#each blogList as blogItemProps, index}
+					<BlogItem {index} {blogItemProps} />
+				{/each}
+			</BlogList>
 		</Spacer>
 		<Button {href} pill centre let:hovering
 			>{label}<Icon {icon} {hovering} animation="pointing" /></Button

@@ -4,6 +4,7 @@
 	export let borderTop = false;
 	export let sticky = false;
 	export let backgroundColour = 'var(--colour-white)';
+	export let overflowHidden = true;
 </script>
 
 <svelte:element
@@ -12,6 +13,7 @@
 	class:sticky
 	class:borderBottom
 	class:borderTop
+	class:overflowHidden
 	style="--background-colour: {backgroundColour}"
 >
 	<slot />
@@ -24,6 +26,8 @@
 		background: var(--background-colour);
 		isolation: isolate;
 		position: relative;
+	}
+	.overflowHidden {
 		overflow: hidden;
 	}
 	.borderBottom {
@@ -38,7 +42,7 @@
 		left: 0;
 		right: 0;
 		display: flex;
-		z-index: 999;
+		z-index: 2;
 		padding-block: 0.75rem;
 	}
 	@media screen and (min-width: 768px) {
