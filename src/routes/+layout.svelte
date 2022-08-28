@@ -6,12 +6,12 @@
 	import CookieConsentBanner from '$lib/CookieConsentBanner.svelte';
 	import SkipLink from '$lib/SkipLink.svelte';
 	export let data;
-	import { setContext } from 'svelte'
+	import { setContext } from 'svelte';
 	const { globalContext, headerProps, footerProps, cookieConsentBannerProps } = data;
-	setContext('globalContext', globalContext)
+	setContext('globalContext', globalContext);
 </script>
 
-<GTM/>
+<GTM />
 <SkipLink />
 <Header {headerProps} />
 
@@ -19,7 +19,7 @@
 	<slot />
 </Main>
 <Footer {footerProps} />
-<CookieConsentBanner {cookieConsentBannerProps}/>
+<CookieConsentBanner {cookieConsentBannerProps} />
 
 <style lang="scss" global>
 	@import '../../static/styles/global.scss';

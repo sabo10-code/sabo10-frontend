@@ -6,24 +6,24 @@
 	import { notifications } from '$lib/stores/notifications';
 
 	export let contactFormProps;
-	const { newsletterSignupLabel, button: {label, icon}, successNotification: { text, newsletterSignupText } } = contactFormProps;
-
+	const {
+		newsletterSignupLabel,
+		button: { label, icon },
+		successNotification: { text, newsletterSignupText }
+	} = contactFormProps;
 
 	function renderText(text, name, newsletterSignup) {
 		text = text.replace('{{Name}}', name);
 		if (newsletterSignup === 'on') {
-			text = `${text} ${newsletterSignupText}`
+			text = `${text} ${newsletterSignupText}`;
 		}
-		return text
+		return text;
 	}
 	const formSuccessHandler = (data) => {
 		const name = data.get('name');
 		const newsletterSignup = data.get('newsletter-signup');
-		const renderedText = renderText(text, name, newsletterSignup)
-		$notifications = [
-			...$notifications,
-			{ content: renderedText }
-		];
+		const renderedText = renderText(text, name, newsletterSignup);
+		$notifications = [...$notifications, { content: renderedText }];
 	};
 </script>
 

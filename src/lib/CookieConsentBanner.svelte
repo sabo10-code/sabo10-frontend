@@ -27,8 +27,11 @@
 		</p>
 		<Spacer block="1rem 0">
 			<span>
-				<button class="accept" on:click={() => handleCookiesButtonClick(true)}>{acceptLabel}</button>
-				<button class="reject" on:click={() => handleCookiesButtonClick(false)}>{rejectLabel}</button>
+				<button class="accept" on:click={() => handleCookiesButtonClick(true)}>{acceptLabel}</button
+				>
+				<button class="reject" on:click={() => handleCookiesButtonClick(false)}
+					>{rejectLabel}</button
+				>
 			</span>
 		</Spacer>
 		<button class="close" on:click={() => handleCookiesButtonClick(true)} aria-label="Close" />
@@ -48,10 +51,6 @@
 	}
 	.hidden {
 		transform: translateY(100%);
-	}
-	a {
-		color: var(--colour-primary-500);
-		text-decoration: none;
 	}
 
 	button {

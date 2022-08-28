@@ -33,21 +33,25 @@ export async function load() {
 			}
 		},
 		blogProps: {
-			heading: "",
-			blogList: [{
-				title: '',
-				imageSrc: '',
-				text: "",
-				tagList: [{
-					colour: '',
-					label: ''
-				}],
-				button: {
-					href: '',
-					label: '',
-					icon: ''
+			heading: '',
+			blogList: [
+				{
+					title: '',
+					imageSrc: '',
+					text: '',
+					tagList: [
+						{
+							colour: '',
+							label: ''
+						}
+					],
+					button: {
+						href: '',
+						label: '',
+						icon: ''
+					}
 				}
-			}],
+			],
 			button: {
 				href: '',
 				label: '',
@@ -65,8 +69,8 @@ export async function load() {
 					icon: ''
 				},
 				successNotification: {
-					text: "success",
-					newsletterSignupText: "newslettr"
+					text: 'success',
+					newsletterSignupText: 'newslettr'
 				}
 			}
 		}

@@ -9,7 +9,11 @@
 	import Icon from '$lib/components/Icon.svelte';
 
 	export let servicesProps;
-	const { heading, serviceList, button: { href, label } } = servicesProps;
+	const {
+		heading,
+		serviceList,
+		button: { href, label }
+	} = servicesProps;
 </script>
 
 <Section>
@@ -17,8 +21,8 @@
 		<Heading>{heading}</Heading>
 		<ServiceList>
 			{#each serviceList as serviceItemProps}
-			<ServiceItem {serviceItemProps} />
-		{/each}
+				<ServiceItem {serviceItemProps} />
+			{/each}
 		</ServiceList>
 		<Button {href} pill centre>{label}</Button>
 	</Container>

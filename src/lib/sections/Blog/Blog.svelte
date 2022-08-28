@@ -11,7 +11,12 @@
 	import BlogItem from './BlogItem.svelte';
 
 	export let blogProps;
-	const { heading, blogList, button: {href, label, icon }, watermark } = blogProps;
+	const {
+		heading,
+		blogList,
+		button: { href, label, icon },
+		watermark
+	} = blogProps;
 </script>
 
 <Section

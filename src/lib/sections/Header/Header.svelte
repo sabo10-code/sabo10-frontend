@@ -6,7 +6,7 @@
 	import Row from '$lib/components/Row.svelte';
 	import NotificationList from '$lib/NotificationList.svelte';
 	export let headerProps;
-	const { navMenuProps } = headerProps
+	const { navMenuProps } = headerProps;
 </script>
 
 <Section tag="header" borderBottom sticky overflowHidden={false}>

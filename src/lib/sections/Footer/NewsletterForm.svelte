@@ -5,17 +5,20 @@
 	import Icon from '$lib/components/Icon.svelte';
 	import { notifications } from '$lib/stores/notifications';
 	export let newsletterFormProps;
-	const { button: { label, icon }, successNotificationText } = newsletterFormProps;
+	const {
+		button: { label, icon },
+		successNotificationText
+	} = newsletterFormProps;
 
 	function renderText(text, email) {
-		return text.replace('{{Email}}', )
+		return text.replace('{{Email}}', email);
 	}
-	
+
 	function formSuccessHandler(data) {
 		const email = data.get('email');
-		const renderedText = renderText(successNotificationText, email)
+		const renderedText = renderText(successNotificationText, email);
 		$notifications = [...$notifications, { content: renderedText }];
-	};
+	}
 </script>
 
 <Form name="newsletter" halfWidth {formSuccessHandler}>

@@ -1,6 +1,5 @@
-
 <ul>
-	<slot/>
+	<slot />
 </ul>
 
 <style>

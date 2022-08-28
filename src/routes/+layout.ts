@@ -52,14 +52,14 @@ export async function load() {
 						label: '',
 						icon: ''
 					},
-					successNotificationText: ""
+					successNotificationText: ''
 				}
 			}
 		},
 		cookieConsentBannerProps: {
 			delay: 500,
 			text: '',
-			acceptLabel: "",
+			acceptLabel: '',
 			rejectLabel: ''
 		}
 	};

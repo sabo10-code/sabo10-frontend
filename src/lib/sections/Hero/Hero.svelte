@@ -10,7 +10,11 @@
 		text: string;
 		button: { href: string; label: string; icon: string };
 	};
-	const { heading, text, button: { href, label, icon} } = heroProps;
+	const {
+		heading,
+		text,
+		button: { href, label, icon }
+	} = heroProps;
 </script>
 
 <Section backgroundColour="var(--colour-primary-100)">
