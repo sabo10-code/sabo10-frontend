@@ -3,9 +3,9 @@
 	import Copyright from './Copyright.svelte';
 	import Paragraph from '$lib/components/Paragraph.svelte';
 	export let newsletterProps;
-	const { newsletterText, newsletterFormProps } = newsletterProps;
+	const { text, newsletterFormProps } = newsletterProps;
 </script>
 
-<Paragraph bold marginTop="2.5rem" marginBottom="2rem" halfWidth>{newsletterText}</Paragraph>
+<Paragraph bold marginTop="2.5rem" marginBottom="2rem" halfWidth>{text}</Paragraph>
 <NewsletterForm {newsletterFormProps} />
 <Copyright />

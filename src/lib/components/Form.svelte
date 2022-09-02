@@ -28,10 +28,10 @@
 
 	function handleSubmit() {
 		let formData = new FormData(this);
-		fetch('/', {
+		console.log({ formData });
+		fetch('/api/v1/form', {
 			method: 'POST',
-			headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-			body: new URLSearchParams(formData).toString()
+			body: formData
 		})
 			.then((response) => handleResponse(response, formData))
 			.catch((error) => handleError(error));
@@ -40,15 +40,14 @@
 
 <form
 	{name}
-	data-netlify="true"
 	method="POST"
 	class:column
 	class:halfWidth
 	style="--margin-top: {marginTop}"
 	on:submit|preventDefault={handleSubmit}
 >
-	<input type="hidden" name="form-name" value={name} />
 	<FormHoneyPot />
+
 	<slot />
 </form>
 

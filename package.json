@@ -14,6 +14,7 @@
 	},
 	"devDependencies": {
 		"@playwright/test": "^1.25.0",
+		"@portabletext/svelte": "^1.0.1",
 		"@sveltejs/adapter-auto": "next",
 		"@sveltejs/adapter-netlify": "^1.0.0-next.72",
 		"@sveltejs/kit": "next",
@@ -34,6 +35,7 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"@sanity/client": "^3.3.3"
+		"@sanity/client": "^3.3.3",
+		"@sanity/image-url": "^1.0.1"
 	}
 }

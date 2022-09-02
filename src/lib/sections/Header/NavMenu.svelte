@@ -1,16 +1,12 @@
 <script lang="ts">
 	import { navOpen } from '$lib/stores/navOpen';
-	import NavItem from './NavItem.svelte';
 	import Hamburger from './Hamburger.svelte';
-	export let navMenuProps;
 </script>
 
 <Hamburger />
 <nav id="primaryNavigation" aria-expanded={$navOpen}>
 	<ul>
-		{#each navMenuProps as navItemProps}
-			<NavItem {navItemProps} />
-		{/each}
+		<slot />
 	</ul>
 </nav>
 

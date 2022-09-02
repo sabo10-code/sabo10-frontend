@@ -1,9 +1,12 @@
 <script lang="ts">
 	import { navOpen } from '$lib/stores/navOpen';
+	import { browser } from '$app/env';
 
 	function handleClick() {
 		$navOpen = !$navOpen;
 	}
+
+	$: if (browser) document.body.classList.toggle('noscroll', $navOpen);
 </script>
 
 <button
